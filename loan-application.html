@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Business Loan Management System - Loan Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Small Business Loan Management System</h1>
+            <p class="tagline">Empowering Small Businesses with Easy Access to Loans</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="business-registration.html">Business Registration</a></li>
+            <li><a href="loan-application.html" class="active">Loan Application</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h2>Loan Application</h2>
+            <p>Apply for a business loan by filling out the form below. Make sure you have your business ID ready before applying.</p>
+        </section>
+
+        <section class="form-section">
+            <form class="loan-form" id="loanApplicationForm">
+                <fieldset>
+                    <legend>Applicant Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="businessId">Business ID *</label>
+                        <input type="text" id="businessId" name="businessId" required placeholder="e.g., BSID-ABC123XYZ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessNameLoan">Business Name *</label>
+                        <input type="text" id="businessNameLoan" name="businessNameLoan" required placeholder="Enter business name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="applicantName">Applicant Name *</label>
+                        <input type="text" id="applicantName" name="applicantName" required placeholder="Full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email *</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPhone">Contact Phone *</label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required placeholder="(123) 456-7890">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Loan Details</legend>
+                    
+                    <div class="form-group">
+                        <label for="loanAmount">Loan Amount Requested (USD) *</label>
+                        <input type="number" id="loanAmount" name="loanAmount" required placeholder="Enter loan amount" min="1000" step="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loanPurpose">Purpose of Loan *</label>
+                        <select id="loanPurpose" name="loanPurpose" required>
+                            <option value="">-- Select a purpose --</option>
+                            <option value="equipment">Equipment Purchase</option>
+                            <option value="expansion">Business Expansion</option>
+                            <option value="working-capital">Working Capital</option>
+                            <option value="inventory">Inventory Purchase</option>
+                            <option value="debt-consolidation">Debt Consolidation</option>
+                            <option value="technology">Technology Investment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loanTerm">Loan Term (Months) *</label>
+                        <select id="loanTerm" name="loanTerm" required>
+                            <option value="">-- Select a term --</option>
+                            <option value="6">6 Months</option>
+                            <option value="12">12 Months</option>
+                            <option value="24">24 Months</option>
+                            <option value="36">36 Months</option>
+                            <option value="48">48 Months</option>
+                            <option value="60">60 Months</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interestRate">Expected Interest Rate (%)</label>
+                        <input type="number" id="interestRate" name="interestRate" placeholder="Interest rate will be calculated based on creditworthiness" min="0" max="100" step="0.1">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Financial Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="monthlyRevenue">Average Monthly Revenue (USD) *</label>
+                        <input type="number" id="monthlyRevenue" name="monthlyRevenue" required placeholder="Enter average monthly revenue" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthlyExpense">Average Monthly Expenses (USD) *</label>
+                        <input type="number" id="monthlyExpense" name="monthlyExpense" required placeholder="Enter average monthly expenses" min="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="creditScore">Credit Score Range *</label>
+                        <select id="creditScore" name="creditScore" required>
+                            <option value="">-- Select range --</option>
+                            <option value="excellent">Excellent (750+)</option>
+                            <option value="good">Good (700-749)</option>
+                            <option value="fair">Fair (650-699)</option>
+                            <option value="poor">Poor (Below 650)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="existingDebt">Existing Debt (USD) *</label>
+                        <input type="number" id="existingDebt" name="existingDebt" required placeholder="Total existing debt" min="0">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="loanDescription">Describe how you will use the loan funds *</label>
+                        <textarea id="loanDescription" name="loanDescription" required placeholder="Provide details about how you plan to use the loan" rows="5"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="collateral">Collateral Available *</label>
+                        <select id="collateral" name="collateral" required>
+                            <option value="">-- Select an option --</option>
+                            <option value="equipment">Equipment</option>
+                            <option value="property">Real Estate Property</option>
+                            <option value="vehicles">Vehicles</option>
+                            <option value="inventory">Inventory</option>
+                            <option value="none">No Collateral</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agreeApplicationTerms" name="agreeApplicationTerms" required>
+                        <label for="agreeApplicationTerms">I certify that all information provided is accurate and complete *</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Submit Loan Application</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="applications-section">
+            <h2>Sample Submitted Loan Applications</h2>
+            <p>Below is a table showing recently submitted loan applications and their current status.</p>
+            
+            <div class="table-wrapper">
+                <table class="applications-table">
+                    <thead>
+                        <tr>
+                            <th>Business ID</th>
+                            <th>Business Name</th>
+                            <th>Annual Revenue</th>
+                            <th>Loan Amount Requested</th>
+                            <th>Application Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BSID-TEC001</td>
+                            <td>TechStart Solutions</td>
+                            <td>$250,000</td>
+                            <td>$50,000</td>
+                            <td><span class="status approved">Approved</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-RET002</td>
+                            <td>Local Retail Boutique</td>
+                            <td>$180,000</td>
+                            <td>$30,000</td>
+                            <td><span class="status pending">Pending Review</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-MFG003</td>
+                            <td>Custom Manufacturing Inc</td>
+                            <td>$500,000</td>
+                            <td>$100,000</td>
+                            <td><span class="status approved">Approved</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-CON004</td>
+                            <td>BuildRight Construction</td>
+                            <td>$320,000</td>
+                            <td>$75,000</td>
+                            <td><span class="status rejected">Rejected</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-SRV005</td>
+                            <td>Premium Service Group</td>
+                            <td>$150,000</td>
+                            <td>$25,000</td>
+                            <td><span class="status pending">Under Review</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-FOO006</td>
+                            <td>Gourmet Food Catering</td>
+                            <td>$280,000</td>
+                            <td>$40,000</td>
+                            <td><span class="status approved">Approved</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-HEA007</td>
+                            <td>Health & Wellness Clinic</td>
+                            <td>$420,000</td>
+                            <td>$60,000</td>
+                            <td><span class="status pending">Pending Review</span></td>
+                        </tr>
+                        <tr>
+                            <td>BSID-EDU008</td>
+                            <td>Online Learning Academy</td>
+                            <td>$195,000</td>
+                            <td>$35,000</td>
+                            <td><span class="status approved">Approved</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="status-legend">
+                <h3>Application Status Legend:</h3>
+                <ul>
+                    <li><span class="status approved">Approved</span> - Application has been approved and loan is funded</li>
+                    <li><span class="status pending">Pending Review</span> - Application is under review by the approval team</li>
+                    <li><span class="status rejected">Rejected</span> - Application has been declined; contact support for more information</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Small Business Loan Management System</p>
+            <p>Created by: BSAN 320V Student | Published: 2026</p>
+            <p>All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('loanApplicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const businessId = document.getElementById('businessId').value;
+            const loanAmount = document.getElementById('loanAmount').value;
+            alert('Loan application submitted successfully!\n\nBusiness ID: ' + businessId + '\nLoan Amount: $' + loanAmount + '\n\nYour application has been received. You will receive an email confirmation within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

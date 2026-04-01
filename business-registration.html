@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Business Loan Management System - Business Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Small Business Loan Management System</h1>
+            <p class="tagline">Empowering Small Businesses with Easy Access to Loans</p>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="business-registration.html" class="active">Business Registration</a></li>
+            <li><a href="loan-application.html">Loan Application</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <h2>Business Registration</h2>
+            <p>Register your business to get started with our loan management system. Please fill out all required fields marked with an asterisk (*).</p>
+        </section>
+
+        <section class="form-section">
+            <form class="registration-form" id="businessRegistrationForm">
+                <fieldset>
+                    <legend>Business Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="businessName">Business Name *</label>
+                        <input type="text" id="businessName" name="businessName" required placeholder="Enter your business name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="businessType">Business Type *</label>
+                        <select id="businessType" name="businessType" required>
+                            <option value="">-- Select a business type --</option>
+                            <option value="sole-proprietorship">Sole Proprietorship</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="llc">Limited Liability Company (LLC)</option>
+                            <option value="corporation">Corporation</option>
+                            <option value="nonprofit">Non-Profit Organization</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registrationDate">Date of Establishment *</label>
+                        <input type="date" id="registrationDate" name="registrationDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="industry">Industry *</label>
+                        <input type="text" id="industry" name="industry" required placeholder="e.g., Technology, Retail, Manufacturing">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="annualRevenue">Annual Revenue (USD) *</label>
+                        <input type="number" id="annualRevenue" name="annualRevenue" required placeholder="Enter annual revenue" min="0">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Owner Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="ownerFirstName">Owner First Name *</label>
+                        <input type="text" id="ownerFirstName" name="ownerFirstName" required placeholder="First name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ownerLastName">Owner Last Name *</label>
+                        <input type="text" id="ownerLastName" name="ownerLastName" required placeholder="Last name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="yearsInBusiness">Years in Business *</label>
+                        <input type="number" id="yearsInBusiness" name="yearsInBusiness" required placeholder="Enter number of years" min="0">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Business Address</legend>
+                    
+                    <div class="form-group">
+                        <label for="street">Street Address *</label>
+                        <input type="text" id="street" name="street" required placeholder="Street address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" name="city" required placeholder="City">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required placeholder="State">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zipcode">ZIP Code *</label>
+                            <input type="text" id="zipcode" name="zipcode" required placeholder="ZIP Code">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Agreement</legend>
+                    
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the Terms and Conditions *</label>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required>
+                        <label for="agreePrivacy">I agree to the Privacy Policy *</label>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Register Business</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="info-box">
+            <h3>What happens after registration?</h3>
+            <p>After successfully registering your business, you'll receive a confirmation email with your Business ID. You can then use this ID to apply for loans through our Loan Application page. Our team will review your information and contact you within 2-3 business days.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Small Business Loan Management System</p>
+            <p>Created by: BSAN 320V Student | Published: 2026</p>
+            <p>All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('businessRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering! Your business ID is: BSID-' + Math.random().toString(36).substr(2, 9).toUpperCase() + '. Check your email for confirmation.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
